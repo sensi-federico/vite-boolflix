@@ -15,9 +15,6 @@ export default {
         return {
             store
         }
-    },
-    methods() {
-
     }
 }
 

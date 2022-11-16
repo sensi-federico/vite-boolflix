@@ -5,7 +5,8 @@ export const store = reactive({
     error: null,
     movies: null,
     userInput: null,
-
+    lang: null,
+    image: '../../public/img/',
     callApi(input) {
         const config = {
             method: 'get',

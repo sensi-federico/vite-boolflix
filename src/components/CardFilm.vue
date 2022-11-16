@@ -1,8 +1,12 @@
 <script>
 import { store } from '../store.js'
+import FlagLang from './FlagLang.vue';
 
 export default {
     name: 'CardFilm',
+    components: {
+        FlagLang
+    },
     props: {
         movie: Object
     },
@@ -12,22 +16,29 @@ export default {
         }
     }
 }
-
 </script>
 
 <template>
 
     <div class="col">
         <div class="card">
-            <p class="text-black">{{ movie.title }}</p>
-            <p class="text-black">{{ movie.original_title }}</p>
-            <p class="text-black">{{ movie.original_language }}</p>
-            <p class="text-black">{{ movie.vote_average }}</p>
+            <h6 class="m-0">Titolo:</h6>
+            <p>{{ movie.title }}</p>
+            <h6 class="m-0">Titolo Originale:</h6>
+            <p>{{ movie.original_title }}</p>
+
+            <div class="div d-flex align-items-center">
+                <h6 class="mb-2 me-2">Lingua Originale:</h6>
+                <FlagLang :movie="movie" />
+            </div>
+            <p>{{ movie.vote_average }}</p>
         </div>
     </div>
 
 </template>
 
 <style>
-
+.card {
+    color: black;
+}
 </style>
