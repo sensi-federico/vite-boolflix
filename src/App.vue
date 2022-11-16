@@ -16,8 +16,8 @@ export default {
             store
         }
     },
-    mounted() {
-        this.store.callApi('The Matrix')
+    methods() {
+
     }
 }
 
