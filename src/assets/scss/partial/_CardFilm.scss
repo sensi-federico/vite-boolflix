@@ -1,14 +1,17 @@
 .card {
     color: black;
+    background-color: #5d5d5d;
 
     .thumb {
         width: 100%;
         border-top-right-radius: .3rem;
         border-top-left-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        border-bottom-left-radius: .3rem;
     }
 
     .img-none {
-        height: 368px;
+        height: 366.59px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -39,6 +42,6 @@
 
     &:hover .info {
         display: block;
-        height: 368px;
+        height: 366.59px;
     }
 }

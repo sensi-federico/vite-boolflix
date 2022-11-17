@@ -2,6 +2,13 @@ import { reactive } from 'vue'
 import axios from 'axios'
 
 export const store = reactive({
+    activeImage: 0,
+    intervalId: null,
+    slides: [
+        '../public/img/daredevil.png',
+        '../public/img/dark.png',
+        '../public/img/the-witcher.png',
+    ],
     error: null,
     movies: null,
     userInput: null,
@@ -48,5 +55,16 @@ export const store = reactive({
     stars(vote) {
         return Math.ceil(vote)
     },
-
+    // funzioni per slider
+    nextSlide() {
+        store.activeImage++
+        if (store.activeImage === store.slides.length) {
+            store.activeImage = 0
+        }
+    },
+    autoPlay() {
+        store.intervalId = setInterval(() => {
+            store.nextSlide()
+        }, 5000)
+    }
 })

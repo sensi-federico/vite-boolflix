@@ -15,6 +15,9 @@ export default {
         return {
             store
         }
+    },
+    mounted() {
+        store.autoPlay()
     }
 }
 
