@@ -5,8 +5,17 @@ export const store = reactive({
     error: null,
     movies: null,
     userInput: null,
-    lang: null,
-    image: '../../public/img/',
+    // flags: {
+    //     lang: ['en', 'it', 'es', 'ja']
+    // },
+    // show: null,
+    flags: {
+        es: '../public/img/es.png',
+        it: '../public/img/it.png',
+        en: '../public/img/en.png',
+        ja: '../public/img/ja.png',
+    },
+
     callApi(input) {
         const config = {
             method: 'get',
@@ -24,5 +33,30 @@ export const store = reactive({
             .catch(err => {
                 console.log(err)
             })
+    },
+
+    // flagFinder(lang) {
+
+    //     for (let i = 0; i < store.flags.lang.length; i++) {
+    //         if (store.flags.lang.includes(lang)) {
+    //             store.show = true
+    //             console.log('sono vero');
+    //         } else {
+    //             store.show = false
+    //             console.log('sono falso');
+    //         }
+    //     }
+    // }
+
+    flagFinder(lang) {
+        if (lang === 'en') {
+            return store.flags.en
+        } else if (lang === 'it') {
+            return store.flags.it
+        } else if (lang === 'es') {
+            return store.flags.es
+        } else if (lang === 'ja') {
+            return store.flags.ja
+        }
     }
 })

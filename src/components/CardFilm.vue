@@ -14,7 +14,7 @@ export default {
         return {
             store
         }
-    }
+    },
 }
 </script>
 
@@ -22,15 +22,19 @@ export default {
 
     <div class="col">
         <div class="card">
+
             <h6 class="m-0">Titolo:</h6>
             <p>{{ movie.title }}</p>
+
             <h6 class="m-0">Titolo Originale:</h6>
             <p>{{ movie.original_title }}</p>
 
             <div class="div d-flex align-items-center">
                 <h6 class="mb-2 me-2">Lingua Originale:</h6>
-                <FlagLang :movie="movie" />
+                <FlagLang :movie="movie" v-if="store.show === true" />
+                <p v-else>{{ movie.original_language }}</p>
             </div>
+
             <p>{{ movie.vote_average }}</p>
         </div>
     </div>

@@ -10,12 +10,12 @@ export default {
         return {
             store
         }
-    }
+    },
 }
 </script>
 
 <template>
-    <img :src="store.image + movie.original_language + '.png'" :alt="movie.original_language" class="mb-2">
+    <img :src="store.flagFinder(movie.original_language)" alt="" class="mb-2">
 </template>
 
 <style lang="scss">
