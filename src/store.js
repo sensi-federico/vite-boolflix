@@ -12,6 +12,7 @@ export const store = reactive({
         ja: '../public/img/ja.png',
     },
     thumbUrl: 'https://image.tmdb.org/t/p/original/',
+    // chiamata api
     callApi(input) {
         const config = {
             method: 'get',
@@ -21,6 +22,7 @@ export const store = reactive({
                 query: input
             }
         }
+        // chiamata axios
         axios(config)
             .then(response => {
                 store.movies = response.data.results
@@ -30,7 +32,7 @@ export const store = reactive({
                 console.log(err)
             })
     },
-
+    // funzione ricerca lingua e sostituzione testo con bandiera (se possibile) 
     search(lang) {
         if (lang === 'en') {
             return store.flags.en
@@ -42,8 +44,9 @@ export const store = reactive({
             return store.flags.ja
         }
     },
-
+    // funzione che genera stelle al posto del voto
     stars(vote) {
         return Math.ceil(vote)
-    }
+    },
+
 })

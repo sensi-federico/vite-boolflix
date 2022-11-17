@@ -1,0 +1,44 @@
+.card {
+    color: black;
+
+    .thumb {
+        width: 100%;
+        border-top-right-radius: .3rem;
+        border-top-left-radius: .3rem;
+    }
+
+    .img-none {
+        height: 368px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info {
+        display: none;
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .lang img {
+        width: 20px;
+        float: left;
+    }
+
+    .lang p {
+        margin-bottom: .5rem;
+        padding-left: .5rem;
+    }
+
+    &:hover .thumb,
+    &:hover .img-none {
+        display: none;
+    }
+
+    &:hover .info {
+        display: block;
+        height: 368px;
+    }
+}
