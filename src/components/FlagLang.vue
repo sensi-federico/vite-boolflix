@@ -15,11 +15,18 @@ export default {
 </script>
 
 <template>
-    <img :src="store.flagFinder(movie.original_language)" alt="" class="mb-2">
+    <img :src="store.search(movie.original_language)" :alt="movie.origina_language" class="mb-2">
+    <p>{{ movie.original_language }}</p>
 </template>
 
 <style lang="scss">
 img {
     width: 20px;
+    float: left;
+}
+
+p {
+    margin-bottom: .5rem;
+    padding-left: .5rem;
 }
 </style>

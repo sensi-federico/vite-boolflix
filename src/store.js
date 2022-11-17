@@ -5,17 +5,13 @@ export const store = reactive({
     error: null,
     movies: null,
     userInput: null,
-    // flags: {
-    //     lang: ['en', 'it', 'es', 'ja']
-    // },
-    // show: null,
     flags: {
         es: '../public/img/es.png',
         it: '../public/img/it.png',
         en: '../public/img/en.png',
         ja: '../public/img/ja.png',
     },
-
+    thumbUrl: 'https://image.tmdb.org/t/p/original/',
     callApi(input) {
         const config = {
             method: 'get',
@@ -35,20 +31,7 @@ export const store = reactive({
             })
     },
 
-    // flagFinder(lang) {
-
-    //     for (let i = 0; i < store.flags.lang.length; i++) {
-    //         if (store.flags.lang.includes(lang)) {
-    //             store.show = true
-    //             console.log('sono vero');
-    //         } else {
-    //             store.show = false
-    //             console.log('sono falso');
-    //         }
-    //     }
-    // }
-
-    flagFinder(lang) {
+    search(lang) {
         if (lang === 'en') {
             return store.flags.en
         } else if (lang === 'it') {
