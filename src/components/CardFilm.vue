@@ -31,12 +31,17 @@ export default {
             <h6 class="m-0">Titolo Originale:</h6>
             <p>{{ movie.original_title }}</p>
 
-            <div class="div d-flex align-items-center">
+            <div class="lang d-flex align-items-center">
                 <h6 class="mb-2 me-2">Lingua Originale:</h6>
                 <FlagLang :movie="movie" />
             </div>
 
-            <p>{{ movie.vote_average }}</p>
+            <div class="vote">
+                <h6>Voto:</h6>
+                <img src="/img/netflix.png" alt="" v-for="star in store.stars(movie.vote_average / 2)">
+            </div>
+
+            <!-- <p>{{ movie.vote_average }}</p> -->
         </div>
     </div>
 

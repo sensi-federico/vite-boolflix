@@ -41,5 +41,9 @@ export const store = reactive({
         } else if (lang === 'ja') {
             return store.flags.ja
         }
+    },
+
+    stars(vote) {
+        return Math.ceil(vote)
     }
 })
