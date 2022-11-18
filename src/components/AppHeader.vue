@@ -17,20 +17,42 @@ export default {
 
 
     <header id="site_header">
-        <div class="slider">
-            <img :src="store.slides[store.activeImage]" alt="">
-        </div>
-        <nav class="d-flex flex-column align-items-center justify-content-between">
-            <!-- logo -->
-            <div class="logo">
-                <img src="../../public/img/Boolflix.png" alt="">
+
+        <nav class="d-flex align-items-center justify-content-between">
+            <!-- left-bar + logo -->
+            <div class="logo d-flex align-items-center ps-5">
+                <img class="me-3" src="../../public/img/Boolflix.png" alt="">
+                <div class="item ps-2 ">
+                    <a href="#">Home</a>
+                    <a href="#">Serie TV</a>
+                    <a href="#">Film</a>
+                    <a href="#">Originali</a>
+                    <a href="#">Aggiunti di recente</a>
+                    <a href="#">La mia lista</a>
+                </div>
             </div>
             <!-- barra di ricerca -->
-            <div class="search-bar">
+            <div class="search-bar pe-5">
                 <input type="text" v-model="store.userInput" @keyup.enter="store.callApi(store.userInput)">
                 <button class="m-2 btn" @click="store.callApi(store.userInput)">Search</button>
             </div>
         </nav>
+
+        <div class="slider">
+            <img :src="store.slides[store.activeImage].thumb" alt="">
+            <img :src="store.slides[store.activeImage].logo" alt="" class="logoSeries">
+            <div class="commands">
+                <div class="btn play">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    Riproduci
+                </div>
+                <div class="btn info">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    Altre info
+                </div>
+            </div>
+        </div>
+
     </header>
     <!-- /#site_header -->
 
@@ -41,16 +63,49 @@ export default {
 
     img {
         width: 100%;
-        height: 500px;
+        height: 700px;
         object-fit: cover;
+    }
+
+    .logoSeries {
+        width: 400px;
+        height: 300px;
+        position: relative;
+        left: 2rem;
+        top: -30rem;
+        object-fit: contain;
+    }
+
+    .commands {
+
+        .btn {
+            position: relative;
+            top: -30rem;
+            padding: .6rem;
+            left: 3rem;
+            scale: 1.2;
+        }
+
+        .play {
+            background-color: white;
+            color: black;
+            border-radius: .2rem;
+        }
+
+        .info {
+            color: white;
+            background-color: rgba(211, 211, 211, 0.548);
+            border-radius: .2rem;
+            margin-left: 2rem;
+        }
+
     }
 }
 
 .logo {
     img {
-        width: 300px;
-        height: 100px;
-        margin-bottom: 1rem;
+        width: 120px;
+        height: 30px;
     }
 }
 
@@ -76,7 +131,18 @@ export default {
 
 nav {
     width: 100%;
-    position: relative;
-    top: -22rem;
+    background-color: rgba(0, 0, 0, 0.591);
+    position: fixed;
+    z-index: 100;
+
+    a {
+        text-decoration: none;
+        color: gray;
+        margin-right: 1rem;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
 </style>

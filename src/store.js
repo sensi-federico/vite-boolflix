@@ -4,11 +4,31 @@ import axios from 'axios'
 export const store = reactive({
     activeImage: 0,
     intervalId: null,
+
     slides: [
-        '../public/img/daredevil.png',
-        '../public/img/dark.png',
-        '../public/img/the-witcher.png',
+
+        {
+            thumb: '../public/img/daredevil.png',
+            logo: '../public/img/daredevil-logo.png'
+        },
+        {
+            thumb: '../public/img/dark.png',
+            logo: '../public/img/dark-logo.png',
+        },
+        {
+            thumb: '../public/img/the-witcher.png',
+            logo: '../public/img/Witcher-logo.png',
+        },
+        {
+            thumb: '../public/img/mr-robot.png',
+            logo: '../public/img/mr-robot-logo.png',
+        },
+        {
+            thumb: '../public/img/how-i-met.png',
+            logo: '../public/img/how-i-met-your-mother-logo.png',
+        },
     ],
+
     error: null,
     movies: null,
     userInput: null,
