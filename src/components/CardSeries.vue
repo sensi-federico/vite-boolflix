@@ -2,7 +2,7 @@
 import { store } from '../store.js'
 
 export default {
-    name: 'CardFilm',
+    name: 'CardSeries',
     props: {
         movie: Object
     },
@@ -28,10 +28,10 @@ export default {
             <!-- info sul film -->
             <div class="info text-center pt-3">
                 <h6 class="m-0">Titolo:</h6>
-                <p>{{ movie.title }}</p>
+                <p>{{ movie.name }}</p>
                 <!-- sezione titolo originale-->
                 <h6 class="m-0">Titolo Originale:</h6>
-                <p>{{ movie.original_title }}</p>
+                <p>{{ movie.origial_name }}</p>
                 <!-- sezione lingua -->
                 <div class="lang ">
                     <h6 class="mb-2 me-2">Lingua Originale:</h6>

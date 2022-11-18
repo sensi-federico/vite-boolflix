@@ -28,7 +28,6 @@ export const store = reactive({
             logo: '../public/img/how-i-met-your-mother-logo.png',
         },
     ],
-
     error: null,
     movies: null,
     userInput: null,
@@ -39,25 +38,29 @@ export const store = reactive({
         ja: '../public/img/ja.png',
     },
     thumbUrl: 'https://image.tmdb.org/t/p/original/',
-    // chiamata api
+
+    // chiamata api doppia
     callApi(input) {
-        const config = {
-            method: 'get',
-            url: 'https://api.themoviedb.org/3/search/movie',
-            params: {
-                api_key: 'ed79b78c7740eb424b5c1339fa2fb154',
-                query: input
-            }
-        }
-        // chiamata axios
-        axios(config)
-            .then(response => {
-                store.movies = response.data.results
-                console.log(store.movies)
+        this.movies = null;
+        this.callAxios('https://api.themoviedb.org/3/search/movie?api_key=ab909735a57a0d14313842405a2fd07c&query=' + input)
+        this.callAxios('https://api.themoviedb.org/3/search/tv?api_key=ab909735a57a0d14313842405a2fd07c&query=' + input)
+    },
+    // chiamata axios
+    callAxios(call) {
+        axios.get(call)
+            .then(function (response) {
+                if (store.movies === null) {
+                    store.movies = response.data.results
+                } else {
+                    response.data.results.forEach(element => {
+                        store.movies.push(element)
+                    });
+                }
+                console.log(store.movies);
             })
-            .catch(err => {
-                console.log(err)
-            })
+            .catch(function (error) {
+                console.log(error);
+            });
     },
     // funzione ricerca lingua e sostituzione testo con bandiera (se possibile) 
     search(lang) {

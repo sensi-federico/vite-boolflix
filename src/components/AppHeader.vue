@@ -42,7 +42,7 @@ export default {
                 </div>
             </div>
         </nav>
-
+        <!-- slider -->
         <div class="slider">
             <img :src="store.slides[store.activeImage].thumb" alt="">
             <img :src="store.slides[store.activeImage].logo" alt="" class="logoSeries">
@@ -66,6 +66,8 @@ export default {
 <style lang="scss">
 .slider {
 
+    height: 700px;
+
     img {
         width: 100%;
         height: 700px;
@@ -82,6 +84,8 @@ export default {
     }
 
     .commands {
+
+        height: 0;
 
         .btn {
             position: relative;
@@ -143,7 +147,7 @@ nav {
 
     a {
         text-decoration: none;
-        color: gray;
+        color: rgba(230, 230, 230, 0.8);
         margin-right: 1rem;
 
         &:hover {

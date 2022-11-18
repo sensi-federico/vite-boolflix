@@ -1,6 +1,13 @@
 .card {
-    color: black;
-    background-color: #5d5d5d;
+    color: white;
+    border-radius: 5px;
+    background-color: #0d0d0d;
+    overflow: auto;
+
+
+    &:hover {
+        border: .5px solid white;
+    }
 
     .thumb {
         width: 100%;
@@ -11,7 +18,7 @@
     }
 
     .img-none {
-        height: 366.59px;
+        height: 381px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -38,10 +45,24 @@
     &:hover .thumb,
     &:hover .img-none {
         display: none;
+
     }
 
     &:hover .info {
         display: block;
-        height: 366.59px;
+        height: 381px;
+    }
+
+
+    .stars {
+        position: relative;
+        top: -1.72rem;
+        left: .05rem;
+        color: yellow;
+        font-size: 1.15rem;
+    }
+
+    .stars-empty {
+        font-size: 1.15rem;
     }
 }
