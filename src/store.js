@@ -12,8 +12,8 @@ export const store = reactive({
             logo: '../public/img/daredevil-logo.png'
         },
         {
-            thumb: '../public/img/dark.png',
-            logo: '../public/img/dark-logo.png',
+            thumb: '../public/img/black-mirror.png',
+            logo: '../public/img/black-mirror-logo.png',
         },
         {
             thumb: '../public/img/the-witcher.png',

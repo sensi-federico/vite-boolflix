@@ -32,9 +32,14 @@ export default {
                 </div>
             </div>
             <!-- barra di ricerca -->
-            <div class="search-bar pe-5">
+            <div class="search-bar pe-5 d-flex align-items-center">
                 <input type="text" v-model="store.userInput" @keyup.enter="store.callApi(store.userInput)">
-                <button class="m-2 btn" @click="store.callApi(store.userInput)">Search</button>
+                <button class="m-2 btn p-2 rounded-0" @click="store.callApi(store.userInput)">
+                    <i class="fa-solid fa-magnifying-glass"></i></button>
+                <div>
+                    <i class="fa fa-bell ms-2" aria-hidden="true"></i>
+                    <i class="fa fa-user-circle ms-4" aria-hidden="true"></i>
+                </div>
             </div>
         </nav>
 
@@ -113,15 +118,16 @@ export default {
     margin-top: 1rem;
 
     input {
-        border: 2px solid red;
+        border: .2px solid red;
         padding: .2rem;
         outline: 0;
+        background-color: black;
+        color: white;
     }
 
     button {
         padding: .2rem;
         color: white;
-        background-color: red;
 
         &:hover {
             background-color: red;
