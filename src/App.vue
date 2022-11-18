@@ -18,6 +18,7 @@ export default {
     },
     mounted() {
         store.autoPlay()
+        store.callApi('robot')
     }
 }
 

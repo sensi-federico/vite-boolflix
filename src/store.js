@@ -30,7 +30,7 @@ export const store = reactive({
     ],
     error: null,
     movies: null,
-    userInput: null,
+    query: null,
     flags: {
         es: '../public/img/es.png',
         it: '../public/img/it.png',
@@ -40,10 +40,10 @@ export const store = reactive({
     thumbUrl: 'https://image.tmdb.org/t/p/original/',
 
     // chiamata api doppia
-    callApi(input) {
+    callApi(query) {
         this.movies = null;
-        this.callAxios('https://api.themoviedb.org/3/search/movie?api_key=ab909735a57a0d14313842405a2fd07c&query=' + input)
-        this.callAxios('https://api.themoviedb.org/3/search/tv?api_key=ab909735a57a0d14313842405a2fd07c&query=' + input)
+        this.callAxios('https://api.themoviedb.org/3/search/movie?api_key=ab909735a57a0d14313842405a2fd07c&query=' + query)
+        this.callAxios('https://api.themoviedb.org/3/search/tv?api_key=ab909735a57a0d14313842405a2fd07c&query=' + query)
     },
     // chiamata axios
     callAxios(call) {

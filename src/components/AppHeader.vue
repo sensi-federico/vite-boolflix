@@ -33,8 +33,8 @@ export default {
             </div>
             <!-- barra di ricerca -->
             <div class="search-bar pe-5 d-flex align-items-center">
-                <input type="text" v-model="store.userInput" @keyup.enter="store.callApi(store.userInput)">
-                <button class="m-2 btn p-2 rounded-0" @click="store.callApi(store.userInput)">
+                <input type="text" v-model="store.query" @keyup.enter="store.callApi(store.query)">
+                <button class="m-2 btn p-2 rounded-0" @click="store.callApi(store.query)">
                     <i class="fa-solid fa-magnifying-glass"></i></button>
                 <div>
                     <i class="fa fa-bell ms-2" aria-hidden="true"></i>
